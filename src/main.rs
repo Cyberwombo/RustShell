@@ -24,6 +24,7 @@ pub enum Format {
     Socat,
     Powershell,
     Mkfifo,
+    PhpPentestmonkey,
 }
 
 #[derive(Parser, Debug)]
@@ -80,6 +81,8 @@ fn send_command(stream: &mut TcpStream, command: &mut String) -> std::io::Result
 }
 
 fn exec_local_command(cmd: &str) {
+    let printinfo = format!("Executing Command: {}", cmd);
+    info(&printinfo);
     let output = Command::new("sh")
         .arg("-c")
         .arg(cmd)
@@ -175,7 +178,7 @@ fn generate_shell(args: &Args) -> std::io::Result<()> {
 
 fn local_menu() {
     let mut exit_flag = false;
-    info("Welcome to the local menu function! Type \"Help\" for a list of options");
+    info("Welcome to the local menu function! Type \"-help\" for a list of options");
     loop {
         if exit_flag {
             info("Returning to shell...");
@@ -187,19 +190,25 @@ fn local_menu() {
 
             let mut input = String::new();
             std::io::stdin().read_line(&mut input);
+            //decision tree to decide whether to execute command or execute menu option
             match input.trim() {
-                c if c.starts_with("-exec ") => {
-                let local_cmd = c.strip_prefix("-exec ").unwrap();
-                exec_local_command(local_cmd);
+                c if c.starts_with("-") => {
+                    if c == "-exit" {
+                        exit_flag = true;
+                    } else if c == "-help" {
+                        info("Type a shell command to execute a command on the local machine. Alternatively, here is a list of menu commands:");
+                        println!("-help: show this help menu");
+                        println!("-exit: exit RustShell menu");
+                    }
                 }
-                "-exit" => {
-                    exit_flag = true;
+                c if !c.starts_with("-") => {
+                    let local_cmd = c;
+                    exec_local_command(local_cmd);
                 }
-                "-help" => {
-                    info("Helper function coming soon!");
+                _ => {
+                    error("Invalid command detected, Try again!");
+                    continue;
                 }
-
-                _ => break
             }
         } else {
             error("Something went wrong...Exiting");
