@@ -80,6 +80,12 @@ fn send_command(stream: &mut TcpStream, command: &mut String) -> std::io::Result
     Ok(())
 }
 
+fn print_help_menu() {
+    println!("-help: Show this menu");
+    println!("-exit: Exit Rustshell menu");
+    println!("-interactive: Enter a local interactive shell( (in case you need more functionality)");
+}
+
 fn exec_local_command(cmd: &str) {
     let printinfo = format!("Executing Command: {}", cmd);
     info(&printinfo);
@@ -193,12 +199,21 @@ fn local_menu() {
             //decision tree to decide whether to execute command or execute menu option
             match input.trim() {
                 c if c.starts_with("-") => {
-                    if c == "-exit" {
-                        exit_flag = true;
-                    } else if c == "-help" {
-                        info("Type a shell command to execute a command on the local machine. Alternatively, here is a list of menu commands:");
-                        println!("-help: show this help menu");
-                        println!("-exit: exit RustShell menu");
+                    match c {
+                        "-exit" => {
+                            exit_flag = true;
+                        }
+                        "-help" => {
+                            info("Type a shell command to execute a command on the local machine. Alternatively, here is a list of menu commands:");
+                            print_help_menu();
+                        }
+                        "-interactive" => {
+                            info("Interactive shell mode coming soon!");
+                        }
+                        _ => {
+                            error("That is not a valid command. Try again!");
+                            continue;
+                        }
                     }
                 }
                 c if !c.starts_with("-") => {
@@ -305,6 +320,7 @@ fn handle_client(mut stream: TcpStream) {
     //Upon successful connection, print message
     let connectmessage = format!("CONNECTION RECEIVED!\nFROM: {}\n", client);
     success(&connectmessage);
+    info("Hint: type \"rs:\" to enter Rustshell menu");
         
     //Spawn a thread to continuously read from data stream
     thread::spawn(move || {
@@ -344,6 +360,9 @@ fn handle_client(mut stream: TcpStream) {
                     info("Entering local menu...");
                     local_menu();
                     let _ = stream.write(b"\n");
+                } else if command.trim() == "exit" {
+                    state.store(STATE_LOCAL_SHUTDOWN, Ordering::SeqCst);   
+                    let _ = send_command(&mut stream, &mut command);               
                 } else {
                     let _ = send_command(&mut stream, &mut command);
                 }
