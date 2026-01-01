@@ -1,4 +1,4 @@
-RustShell - A new way to catch your reverse shells
+RustShell - A new way to catch a shell
 ---------------------------------------------------------------------------------------------
 
 Disclaimer: This project is designed strictly for educational and ethical purposes and is not
