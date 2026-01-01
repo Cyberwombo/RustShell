@@ -65,8 +65,8 @@ functionality as I think of them or receive more feedback.
 to disconnect the shell at any time, you can enter "exit" into the command menu. This will send
 an exit command to the machine and at the same time clean up from the reverse shell. This has 
 created a slight problem in that if you have become root on a target machine and type "exit",
-The shell will be disconnected and cleaned up. If you're root, you probably shouldn't be reverting
-access anyway, but I will fix this in future versions of Rustshell.
+The shell will be disconnected and cleaned up. Session handling with the exit keyword will be 
+improved within future versions.
 
 Several planned features are coming, among them are:
 - The ability to create bind shells instead of only being reverse shells:
@@ -86,19 +86,19 @@ Several planned features are coming, among them are:
 Examples:
 -----------------------------------------------------------------------------------------------
 
-rustshell - start RustShell with no flags, bringing you directly to the main menu
+- "rustshell" - start RustShell with no flags, bringing you directly to the main menu
 
-rustshell -m listen - Start RustShell in listen mode, where you will be prompted for the IP and 
+- "rustshell -m listen" - Start RustShell in listen mode, where you will be prompted for the IP and 
 Port to listen on.
 
-rustshell -m listen -l (IP) -p (port) - Start RustShell in listen mode on IP:Port. You will not
+- "rustshell -m listen -l (IP) -p (port)" - Start RustShell in listen mode on IP:Port. You will not
 have to enter any other menu options, and will immediately start listening on that IP and port.
 
-rustshell -m generate - Start RustShell in generate mode. You will be prompted for the IP, Port,
+- "rustshell -m generate" - Start RustShell in generate mode. You will be prompted for the IP, Port,
 Format, and shell parameters. After that, RustShell will generate syntax for you to use in your
 requested format.
 
-rustshell -m generate -f (Format) -s (Shell) -l (IP) -p (Port) - Start RustShell in generate mode,
+- "rustshell -m generate -f (Format) -s (Shell) -l (IP) -p (Port)" - Start RustShell in generate mode,
 You will not be prompted for anything as long as your parameters are valid, and syntax will be 
 gerated for you immediately
 
