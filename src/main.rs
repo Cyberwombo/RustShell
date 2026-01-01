@@ -32,19 +32,19 @@ pub enum Format {
 struct Args {
 
     //mode to run
-    #[arg(short='m', long)]
+    #[arg(short='m', long, help="The mode to start RustShell in\n")]
     mode: Option<Mode>,
     //format for payload generator
-    #[arg(short='f', long)]
+    #[arg(short='f', long, help="The syntax format to use (only applies to generate)\n")]
     format: Option<Format>,
     //shell for payload generator
-    #[arg(short='s', long)]
+    #[arg(short='s', long, help="The name of the shell to use (only applies to generate)")]
     shell: Option<String>,
     //IP to Listen On
-    #[arg(short='l', long)]
+    #[arg(short='l', long, help="The IP address to listen on/callback to")]
     lhost: Option<String>,
     //Port to Listen On
-    #[arg(short='p', long)]
+    #[arg(short='p', long, help="The port to listen on/callback to")]
     lport: Option<String>,
 }
 
@@ -89,7 +89,7 @@ fn print_help_menu() {
 fn exec_local_command(cmd: &str) {
     let printinfo = format!("Executing Command: {}", cmd);
     info(&printinfo);
-    let output = Command::new("sh")
+    let output = Command::new("bash")
         .arg("-c")
         .arg(cmd)
         .output();
@@ -419,7 +419,7 @@ fn run_menu(args: &Args) -> std::io::Result<()> {
 fn main() -> std::io::Result<()> {
     //Print Random Banner
     banner::print_random_banner();
-    println!("A simple program to catch your reverse shells - Written in Rust - For no reason at all!");
+    println!("A simple program to catch your reverse shells!");
     println!("---------------------------------------------------------------------------------------\n");
     print_disclaimer();
     //Parse Arguments
