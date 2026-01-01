@@ -68,6 +68,21 @@ created a slight problem in that if you have become root on a target machine and
 The shell will be disconnected and cleaned up. If you're root, you probably shouldn't be reverting
 access anyway, but I will fix this in future versions of Rustshell.
 
+Several planned features are coming, among them are:
+- The ability to create bind shells instead of only being reverse shells:
+  This function will allow you to create a bind shell listener instead of a reverse shell listener
+  just to add more options for the end user. Of course, this function will rely upon the target
+  system having Rust installed, which can be a case by case issue. I don't see this function being
+  used as much as the reverse shell mode, but full functionality is important to me.
+- An interactive shell mode inside the "in-shell" menu:
+  The current "in-shell" menu is not as interactive as I would like and only includes the ability
+  to issue your local system commands. I will currently keep the "in-shell" menu how it is but
+  add a new menu option named "-interactive", which will put your session into an actual shell
+  session, which will include directory browsing and all that, rather than just the ability to
+  execute local commands, in case the user needs a fully interactive local shell. Of course, it is
+  pretty easy for the user to just open up another terminal, and in some cases, faster, but "moar
+  features", am I right?
+
 Examples:
 -----------------------------------------------------------------------------------------------
 
@@ -105,5 +120,5 @@ performed their basic functions. By building this piece of software, I learned s
 - Creating security auditing tools
 - CLI Software Design
 
-
-
+------------------------------------------------------------------------------------------------
+Now, GO AND CATCH THOSE SHELLS!
