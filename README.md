@@ -8,6 +8,8 @@ designed for anything other than that. Do not use this tool on systems that you:
     2. Don't own or aren't deployed by you
 
 The author of this tool assumes no responsibility from misuse.
+
+What is RustShell?
 ---------------------------------------------------------------------------------------------
 
 This is RustShell - a Project I came up with in my spare time to add to my GitHub portfolio. 
@@ -24,9 +26,9 @@ shell. Some supported formats currently among others are:
   -Netcat
   -Nc.exe
   -PHP Pentestmonkey
-----------------------------------------------------------------------------------------------
 
 Basic usage:
+----------------------------------------------------------------------------------------------
 
 RustShell can be used with flags from the CLI, or can be started up without flags. To start the
 program without flags, type:
@@ -66,9 +68,8 @@ created a slight problem in that if you have become root on a target machine and
 The shell will be disconnected and cleaned up. If you're root, you probably shouldn't be reverting
 access anyway, but I will fix this in future versions of Rustshell.
 
------------------------------------------------------------------------------------------------
-
 Examples:
+-----------------------------------------------------------------------------------------------
 
 rustshell - start RustShell with no flags, bringing you directly to the main menu
 
