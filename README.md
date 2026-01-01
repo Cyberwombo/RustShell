@@ -42,7 +42,7 @@ prompted to enter an option. The currently supported options are:
   2. Generate reverse shell syntax
   3. Exit doing nothing
 
-If rustShell is started with flags, they will be treated as though you entered in options from
+If RustShell is started with flags, they will be treated as though you entered in options from
 this menu automatically. The flags currently supported are:
 
 - -m or --mode: The mode to use RustShell in. Valid options are either listen, or generate
