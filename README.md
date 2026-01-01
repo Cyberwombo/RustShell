@@ -99,11 +99,11 @@ tools use TCP connections to perform their functions. When I began this project,
 to build software capable of TCP connections and didn't even know how other software such as Netcat 
 performed their basic functions. By building this piece of software, I learned several details:
 
--Basic programming in the Rust language and how it differs from other languages
--TCP Networking and building software that uses sockets
--How software utilized TCP Data Streams and how to read and write to those streams
--Creating security auditing tools
--CLI Software Design
+- Basic programming in the Rust language and how it differs from other languages
+- TCP Networking and building software that uses sockets
+- How software utilized TCP Data Streams and how to read and write to those streams
+- Creating security auditing tools
+- CLI Software Design
 
 
 
