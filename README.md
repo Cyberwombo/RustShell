@@ -1,10 +1,10 @@
-RustShell - A new way to catch a shell
+RustShell - A TCP shell listener written in Rust
 ---------------------------------------------------------------------------------------------
 
 Disclaimer: This project is designed strictly for educational and ethical purposes and is not
 designed for anything other than that. Do not use this tool on systems that you:
 
-    1. Don't have explicit written permission to test
+    1. Don't have explicit permission to test
     2. Don't own or aren't deployed by you
 
 The author of this tool assumes no responsibility from misuse.
