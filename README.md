@@ -45,11 +45,11 @@ prompted to enter an option. The currently supported options are:
 If rustShell is started with flags, they will be treated as though you entered in options from
 this menu automatically. The flags currently supported are:
 
-  1. -m or --mode: The mode to use RustShell in. Valid options are either listen, or generate
-  2. -f or --format (only applies to generate mode): Specify the format syntax for syntax generator
-  3. -s or --shell: Specify the shell you want to use for the format generator
-  4. -l or --lport (applies to both listen and generate): The local IP to listen on
-  5. -p or --lport (applies to both listen and generate): The local port to listen on
+- -m or --mode: The mode to use RustShell in. Valid options are either listen, or generate
+- -f or --format (only applies to generate mode): Specify the format syntax for syntax generator
+- -s or --shell: Specify the shell you want to use for the format generator
+- -l or --lport (applies to both listen and generate): The local IP to listen on
+- -p or --lport (applies to both listen and generate): The local port to listen on
 
 When a connection is established, you will see a prompt indicating you've received a TCP
 connection. From there, you can interact with the target system and send commands. RustShell
