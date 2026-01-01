@@ -22,10 +22,10 @@ RustShell includes in "in-shell" menu with which you can perform certain functio
 the scope of the reverse shell. It also includes a built in syntax generator for a basic reverse
 shell. Some supported formats currently among others are:
 
-  -Python3\n
-  -Netcat\n
-  -Nc.exe\n
-  -PHP Pentestmonkey\n
+  -Python3
+  -Netcat
+  -Nc.exe
+  -PHP Pentestmonkey
 
 Basic usage:
 ----------------------------------------------------------------------------------------------
