@@ -86,3 +86,24 @@ requested format.
 rustshell -m generate -f (Format) -s (Shell) -l (IP) -p (Port) - Start RustShell in generate mode,
 You will not be prompted for anything as long as your parameters are valid, and syntax will be 
 gerated for you immediately
+
+
+About the Author:
+-----------------------------------------------------------------------------------------------
+Hello! If you're using this tool, I appreciate your support! Please keep in mind that I am a 
+lone developer. I won't claim that this code is good, but I don't believe this code is bad either.
+I have a few more projects in mind that I would like to implement as well, but am currently 
+focused on developing RustShell as well as learning other cybersecurity topics. This purpose of 
+this project is pure educational. I had decided that I wanted to learn more about how cybersecurity 
+tools use TCP connections to perform their functions. When I began this project, I had no idea how 
+to build software capable of TCP connections and didn't even know how other software such as Netcat 
+performed their basic functions. By building this piece of software, I learned several details:
+
+-Basic programming in the Rust language and how it differs from other languages
+-TCP Networking and building software that uses sockets
+-How software utilized TCP Data Streams and how to read and write to those streams
+-Creating security auditing tools
+-CLI Software Design
+
+
+
