@@ -33,7 +33,7 @@ Basic usage:
 RustShell can be used with flags from the CLI, or can be started up without flags. To start the
 program without flags, type:
 
-  rustshell
+rustshell
 
 If the program is started without flags, it will bring you to the main menu, where you will be 
 prompted to enter an option. The currently supported options are:
