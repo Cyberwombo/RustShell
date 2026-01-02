@@ -195,7 +195,7 @@ fn local_menu() {
             std::io::stdout().flush().unwrap();
 
             let mut input = String::new();
-            std::io::stdin().read_line(&mut input);
+            let _ = std::io::stdin().read_line(&mut input);
             //decision tree to decide whether to execute command or execute menu option
             match input.trim() {
                 c if c.starts_with("-") => {
