@@ -2,7 +2,7 @@
 name = "rustshell"
 version = "1.0.0"
 edition = "2024"
-license-file = "LICENSE.txt"
+license-file = "LICENSE"
 description = "An educational project to aid in security operations and testing"
 repository = "https://github.com/Cyberwombo/RustShell"
 readme = "README.md"
