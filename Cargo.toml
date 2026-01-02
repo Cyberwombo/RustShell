@@ -2,7 +2,13 @@
 name = "rustshell"
 version = "1.0.0"
 edition = "2024"
-
+license-file = "LICENSE.txt"
+description = "An educational project to aid in security operations and testing"
+repository = "https://github.com/Cyberwombo/RustShell"
+readme = "README.md"
+keywords = ["rustshell", "shell", "reverse-shell","security","ethical-hacking"]
+categories = ["command-line-interface", "command-line-utilities", "network-programming", "security"]
+ 
 [dependencies]
 clap = { version = "4.5", features = ["derive"] }
 colored = "3.0.0"
