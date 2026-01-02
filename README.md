@@ -48,7 +48,7 @@ this menu automatically. The flags currently supported are:
 - -m or --mode: The mode to use RustShell in. Valid options are either listen, or generate
 - -f or --format (only applies to generate mode): Specify the format syntax for syntax generator
 - -s or --shell: Specify the shell you want to use for the format generator
-- -l or --lport (applies to both listen and generate): The local IP to listen on
+- -l or --lhost (applies to both listen and generate): The local IP to listen on
 - -p or --lport (applies to both listen and generate): The local port to listen on
 
 When a connection is established, you will see a prompt indicating you've received a TCP
